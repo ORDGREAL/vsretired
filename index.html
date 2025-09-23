@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -11,13 +11,7 @@
     :root {
       --bg-color: #121212;
       --text-color: #ffffff;
-      --card-bg: #1A1A1A;
-    }
-
-    body.light {
-      --bg-color: #f5f5f5;
-      --text-color: #000000;
-      --card-bg: #ffffff;
+      --card-bg: rgba(0, 0, 0, 0.6);
     }
 
     body {
@@ -27,145 +21,111 @@
       background-size: cover;
       color: var(--text-color);
       text-align: center;
-      transition: background-color 0.5s, color 0.5s;
     }
 
-    header p {
-      margin-top: 10px;
-      font-size: 1.1em;
-    }
-
-    .toggle-btn {
+    /* Fondo con overlay */
+    body::before {
+      content: "";
       position: fixed;
-      top: 100px;
-      right: 20px;
-      background: #2F0666;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      z-index: 1100;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: -1;
     }
 
     main {
-      padding: 30px 20px;
-    }
-
-    img {
-      width: 600px;
-      max-width: 100%;
-      transition: transform 0.3s ease;
-    }
-
-    img:hover {
-      transform: scale(1.05);
+      padding: 40px 20px;
     }
 
     .logo {
-      border-radius: 0;
-      box-shadow: none;
+      max-width: 400px;
+      width: 90%;
+      height: auto;
+      margin: 30px auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
     }
 
     .social {
-      margin-top: 30px;
+      margin-top: 40px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 25px;
     }
 
-    .social a img {
-      width: 70px;
-      height: 70px;
-      padding: 10px;
-      border-radius: 15px;
-      background-color: var(--card-bg);
-      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
-      transition: transform 0.3s, background-color 0.3s;
+    .social a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-size: 1.2em;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
-    .social a img:hover {
-      transform: scale(1.1);
-      background-color: #292929;
-    }
-
-    footer {
-      background-color: var(--card-bg);
-      padding: 20px;
-      font-size: 0.9em;
-      color: #aaa;
-      margin-top: 50px;
-      border-top: 1px solid #333;
-    }
-
-    .social-list {
-      list-style: none;   /* quita las viñetas */
-      padding: 0;
-      margin: 0;
-    }
-
-    .social-list li {
-      margin: 10px 0;     /* espacio entre elementos */
+    .social a:hover {
+      color: #ff4081;
     }
 
     .social-item {
       display: flex;
       align-items: center;
-      gap: 10px;          /* espacio entre logo y texto */
-      text-decoration: none;
-      color: var(--text-color);
-      font-size: 1.1em;
+      gap: 12px;
+      background: var(--card-bg);
+      padding: 10px 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .social-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.1);
     }
 
     .social-item img {
-      width: 5px;
-      height: 5px;
-      margin-right: 3px;
+      width: 40px;
+      height: 40px;
     }
 
-    .social-item span {
-      font-weight: bold;
+    footer {
+      background: rgba(0,0,0,0.8);
+      padding: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: 60px;
     }
-
   </style>
 </head>
 <body>
   <main>
     <section data-aos="zoom-in">
-      <img src="imagenes/logo.png" alt="Que es esto?" class="logo"/>
+      <img src="imagenes/logo.png" alt="Logo Retired" class="logo"/>
     </section>
 
     <section class="social" data-aos="fade-up">
-      <ul class="social-list">
-        <li>
-          <a href="https://gamebanana.com/wips/95144" target="_blank" class="social-item">
-            <img src="imagenes/gamebanana.png" alt="Ganebananita" />
-            <span>Gamebanana</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://gamejolt.com/games/retired/1014155" target="_blank" class="social-item">
-            <img src="imagenes/favicon.png" alt="Gamejolt (nadie lo va a descargar aqui)"/>
-            <span>Gamejolt</span>
-          </a>
-        </li>
-      </ul>
+      <a href="https://gamebanana.com/wips/95144" target="_blank" class="social-item">
+        <img src="imagenes/gamebanana.png" alt="Gamebanana" />
+        <span>Gamebanana</span>
+      </a>
+      <a href="https://gamejolt.com/games/retired/1014155" target="_blank" class="social-item">
+        <img src="imagenes/favicon.png" alt="Gamejolt"/>
+        <span>Gamejolt</span>
+      </a>
     </section>
   </main>
-   <footer>
-      Website by: ORDG <br>
-      &copy; 2025 TEAM RETIRED - All rights reserved.
-   </footer>
-  
+
+  <footer>
+    Website by: ORDG <br>
+    &copy; 2025 TEAM RETIRED - All rights reserved.
+  </footer>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-
-    function toggleMode() {
-      document.body.classList.toggle('light');
-    }
-
   </script>
 </body>
 </html>
