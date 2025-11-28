@@ -23,7 +23,6 @@
       text-align: center;
     }
 
-    /* Fondo con overlay */
     body::before {
       content: "";
       position: fixed;
@@ -92,12 +91,32 @@
     }
 
     footer {
-      background: rgba(0,0,0,0.8);
+      background: rgba(0, 0, 0, 0.8);
       padding: 20px;
       font-size: 0.9em;
       color: #aaa;
       margin-top: 60px;
     }
+
+    .burger-btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, background 0.3s ease;
+      font-size: 1.1em;
+    }
+
+    .burger-btn:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.1);
+    }
+
   </style>
 </head>
 <body>
@@ -114,13 +133,13 @@
       <a href="https://gamejolt.com/games/retired/1014155" target="_blank" class="social-item">
         <img src="imagenes/favicon.png" alt="Gamejolt"/>
         <span>Gamejolt</span>
+      <a href="BURGER SHOP.html" class="burger-btn">🍔 Burger Shop
       </a>
     </section>
   </main>
 
   <footer>
-    Website by: ORDG <br>
-    &copy; 2025 TEAM RETIRED - All rights reserved.
+    &copy; 2025 TEAM RETIRED
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
